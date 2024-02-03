@@ -1,39 +1,24 @@
-import { MarkerClusterer } from "@googlemaps/markerclusterer";
-import { AdvancedMarker, useMap } from "@vis.gl/react-google-maps";
-import { customClusterIconRenderer } from "../lib/utils";
+import { AdvancedMarker, InfoWindow } from "@vis.gl/react-google-maps";
+import { setSelectedTreeKey } from "@/src/07_shared/features/trees/treesSlice";
+import { useAppDispatch, useAppSelector } from "@/src/07_shared/store/store";
 
-import type {
-  Marker,
-  MarkerClusterer as IMarcerClusterer,
-} from "@googlemaps/markerclusterer";
+import type { Marker } from "@googlemaps/markerclusterer";
 
-import { useState, useRef, useEffect } from "react";
+import { useState } from "react";
+import { useRenderCustomClusterIcon } from "../lib/hooks/useRenderCustomClusterIcon";
 
 type Point = google.maps.LatLngLiteral & { key: string };
 type Props = { points: Point[] };
 
 const PopulateMarkers = ({ points }: Props) => {
-  const map = useMap();
-
+  const dispatch = useAppDispatch();
   const [markers, setMarkers] = useState<{ [key: string]: Marker }>({});
-  const clusterer = useRef<IMarcerClusterer | null>(null);
 
-  useEffect(() => {
-    if (!map) return;
-    if (!clusterer.current) {
-      clusterer.current = new MarkerClusterer({
-        map,
-        renderer: {
-          render: customClusterIconRenderer,
-        },
-      });
-    }
-  }, [map]);
+  useRenderCustomClusterIcon(markers);
 
-  useEffect(() => {
-    clusterer.current?.clearMarkers();
-    clusterer.current?.addMarkers(Object.values(markers));
-  }, [markers]);
+  const selectedTreeKey = useAppSelector(
+    (state) => state.trees.selectedTreeKey
+  );
 
   const setMarkerRef = (marker: Marker | null, key: string) => {
     if (marker && markers[key]) return;
@@ -51,13 +36,19 @@ const PopulateMarkers = ({ points }: Props) => {
   };
 
   return points.map((point) => (
-    <AdvancedMarker
-      position={point}
-      key={point.key}
-      ref={(marker) => setMarkerRef(marker, point.key)}
-    >
-      <span style={{ fontSize: "1rem" }}>🌳</span>
-    </AdvancedMarker>
+    <div key={point.key}>
+      <AdvancedMarker
+        position={point}
+        onClick={() => dispatch(setSelectedTreeKey(point.key))}
+        ref={(marker) => setMarkerRef(marker, point.key)}
+      >
+        <span style={{ fontSize: "1rem" }}>🌳</span>
+      </AdvancedMarker>
+
+      {selectedTreeKey === point.key && (
+        <InfoWindow position={point}>You can drag and drop me.</InfoWindow>
+      )}
+    </div>
   ));
 };
 

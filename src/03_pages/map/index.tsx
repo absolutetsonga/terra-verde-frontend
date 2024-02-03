@@ -1,6 +1,6 @@
 "use client";
 
-import { useAppSelector, useAppDispatch } from "@/src/07_shared/store/store";
+import { useAppSelector } from "@/src/07_shared/store/store";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
 import { PopulateMarkers } from "@/src/06_entities/populate-markers/ui";
