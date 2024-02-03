@@ -1,10 +1,15 @@
-import { configureStore } from "@reduxjs/toolkit";
 import { useStore, useSelector, useDispatch } from "react-redux";
+import { configureStore } from "@reduxjs/toolkit";
+
+import treesReducer from "../features/trees/treesSlice";
+
 import { TypedUseSelectorHook } from "react-redux";
 
 export const makeStore = () => {
   return configureStore({
-    reducer: {},
+    reducer: {
+      trees: treesReducer,
+    },
   });
 };
 
