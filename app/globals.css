@@ -1,3 +1,98 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.tree-marker:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease;
+}
+
+.info-window {
+  background-color: white;
+  padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  max-width: 350px;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.info-title {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.info-content {
+  font-family: "Arial", sans-serif;
+  margin-top: 12px;
+  margin-bottom: 8px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.info-description,
+.info-detail {
+  margin-top: 0;
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #555;
+}
+
+.info-hr {
+  border: none;
+  height: 1px;
+  background-color: #ddd;
+  margin: 8px 0;
+}
+
+.info-link {
+  color: #007bff;
+}
+
+.info-button,
+.info-label {
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-color: transparent;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  border-radius: 4px;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  font-weight: 500;
+  color: white;
+  background-color: #10b981;
+  cursor: pointer;
+  margin-top: 12px;
+}
+
+.info-label {
+  display: block;
+  width: 100%;
+  font-size: 0.875rem;
+  color: #374151;
+  background-color: #f9fafb;
+  border-radius: 8px;
+  border: 1px solid #d1d5db;
+  padding: 8px;
+  cursor: pointer;
+}
+
+.info-label {
+  margin-bottom: 8px;
+}
+
+.info-help-text {
+  margin-top: 4px;
+  font-size: 0.875rem;
+  line-height: 1.25rem;
+  color: #6b7280;
+}
+
+.info-input {
+  width: 0;
+  height: 0;
+}

@@ -22,24 +22,14 @@ const initialState: TreesState = {
 };
 
 export const treesSlice = createSlice({
-  name: "tree points",
+  name: "trees",
   initialState,
   reducers: {
     setSelectedTreeKey: (state, action: PayloadAction<string | null>) => {
       state.selectedTreeKey = action.payload;
     },
-
-    addTreeMarker: (state, action: PayloadAction<Marker>) => {
-      console.log(action);
-      console.log(state);
-    },
-
-    deleteTreeMarker: (state, action: PayloadAction<string>) => {
-      delete state.treeMarkers[action.payload];
-    },
   },
 });
 
-export const { setSelectedTreeKey, addTreeMarker, deleteTreeMarker } =
-  treesSlice.actions;
+export const { setSelectedTreeKey } = treesSlice.actions;
 export default treesSlice.reducer;

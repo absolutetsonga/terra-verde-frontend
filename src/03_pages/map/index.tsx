@@ -11,18 +11,20 @@ export const MapPage = () => {
 
   return (
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""}>
-      <div
-        style={{
-          height: "100vh",
-        }}
-      >
-        <Map
-          center={position}
-          zoom={10}
-          mapId={process.env.NEXT_PUBLIC_GOOGLE_MAP_CUSTOM_STYLE_ID}
+      <div className="relaive min-h-screen">
+        <div
+          style={{
+            height: "100vh",
+          }}
         >
-          <PopulateMarkers points={trees} />
-        </Map>
+          <Map
+            center={position}
+            zoom={10}
+            mapId={process.env.NEXT_PUBLIC_GOOGLE_MAP_CUSTOM_STYLE_ID}
+          >
+            <PopulateMarkers points={trees} />
+          </Map>
+        </div>
       </div>
     </APIProvider>
   );
