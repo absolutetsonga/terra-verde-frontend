@@ -1,6 +1,6 @@
 import { FieldValues, useForm } from "react-hook-form";
 
-import { Form } from "@/src/05_features/create-point-tree/form";
+import { Form } from "@/src/05_features/create-point-tree/ui";
 
 import { zodResolver } from "@hookform/resolvers/zod";
 

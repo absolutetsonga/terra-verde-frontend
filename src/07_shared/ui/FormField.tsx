@@ -38,8 +38,8 @@ const FormField = ({
           {text}
         </label>
         {link && (
-          <Link href={link.linkUrl}>
-            <a className="form-link">{link.linkText}</a>
+          <Link href={link.linkUrl} className="form-link">
+            {link.linkText}
           </Link>
         )}
       </div>

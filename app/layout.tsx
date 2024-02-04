@@ -1,14 +1,14 @@
-import dynamic from "next/dynamic";
+import "./globals.css";
+
 import { Inter } from "next/font/google";
+import dynamic from "next/dynamic";
 
 import { StoreProvider } from "@/src/01_app/providers/StoreProvider";
 import { Sidebar } from "@/src/04_widgets/sidebar/ui";
 
-import "./globals.css";
-
 const inter = Inter({ subsets: ["latin"] });
 
-export const ToastProvider = dynamic(
+const ToastProvider = dynamic(
   () => import("../src/01_app/providers/ToastProvider"),
   {
     ssr: false,
@@ -23,11 +23,11 @@ export default function RootLayout({
   return (
     <StoreProvider>
       <html lang="en">
-        <body className={inter.className}>
+        <body className={`${inter.className} w-full min-h-screen `}>
           <ToastProvider />
-          <div className="grid grid-cols-3 sm:grid-cols-4 md:grid-cols-6 lg:grid-cols-8">
+          <div className="relative flex w-full min-h-screen">
             <Sidebar />
-            {children}
+            <div className="flex-grow">{children}</div>
           </div>
         </body>
       </html>

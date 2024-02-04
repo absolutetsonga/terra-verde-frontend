@@ -13,9 +13,9 @@ export const MapPage = () => {
     <APIProvider apiKey={process.env.NEXT_PUBLIC_GOOGLE_MAPS_API_KEY ?? ""}>
       <div
         style={{
-          height: "100vh",
+          height: "100%",
+          width: "100%"
         }}
-        className="cols-span-2 sm:col-span-3 md:col-span-5 lg:col-span-7"
       >
         <Map
           center={position}

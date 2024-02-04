@@ -17,7 +17,7 @@
   box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
     0 10px 10px -5px rgba(0, 0, 0, 0.04);
   width: 100%;
-  max-width: 500px; /* Adjust the width as necessary */
+  max-width: 500px;
   box-sizing: border-box;
 }
 
@@ -26,33 +26,30 @@
   flex-direction: column;
 }
 
-/* Styles for the title of the form */
 .info-title {
   font-size: 1.25rem;
   font-weight: 700;
   text-align: center;
-  color: #111827; /* Dark gray */
+  color: #111827;
   margin-bottom: 16px;
 }
 
-/* Styles for the description text */
 .info-description {
   font-size: 1rem;
-  color: #6b7280; /* Gray */
+  color: #6b7280;
   margin-bottom: 16px;
   text-align: left;
 }
 
-/* Styles for the form fields */
 .form-input,
 .form-textarea {
   width: 100%;
   padding: 10px 15px;
   margin-bottom: 10px;
-  border: 2px solid #e5e7eb; /* Light gray border */
+  border: 2px solid #e5e7eb;
   border-radius: 8px;
   font-size: 1rem;
-  color: #111827; /* Dark gray */
+  color: #111827;
 }
 
 .form-textarea {
@@ -60,7 +57,6 @@
   resize: vertical;
 }
 
-/* Styles for the label */
 .form-label {
   border: 1px solid #ccc;
   display: inline-block;
@@ -69,11 +65,10 @@
   width: 100%;
 }
 
-/* Styles for the form link */
 .form-link {
   font-size: 0.875rem;
   font-weight: 600;
-  color: #4f46e5; /* Indigo */
+  color: #4f46e5;
   text-decoration: none;
   margin-left: 8px;
 }
@@ -82,14 +77,13 @@
   text-decoration: underline;
 }
 
-/* Styles for the form button */
 .form-button {
   width: 100%;
   padding: 12px 20px;
   font-size: 1rem;
   font-weight: 600;
-  color: #ffffff; /* White text */
-  background-color: #10b981; /* Green background */
+  color: #ffffff;
+  background-color: #10b981;
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -97,21 +91,20 @@
 }
 
 .form-button:hover {
-  background-color: #059669; /* Darker green */
+  background-color: #059669;
 }
 
 .form-image-preview {
   max-width: 100%;
-  max-height: 300px; /* Adjust the height as necessary */
+  max-height: 300px;
   margin-bottom: 16px;
   border-radius: 8px;
   object-fit: contain;
 }
 
-/* Styles for error messages */
 .error-message {
   font-size: 0.875rem;
-  color: #ef4444; /* Red */
+  color: #ef4444;
   margin-top: 4px;
 }
 
