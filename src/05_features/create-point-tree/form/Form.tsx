@@ -1,9 +1,4 @@
-import {
-  FieldErrors,
-  FieldValues,
-  UseFormRegister,
-  UseFormWatch,
-} from "react-hook-form";
+import { FieldErrors, UseFormRegister } from "react-hook-form";
 
 import { PopulateFormFields } from "@/src/06_entities/populate-form-fields/ui";
 import { FormFieldInfoType } from "@/src/06_entities/populate-form-fields/lib/types";
@@ -19,7 +14,7 @@ type FormProps = {
   status?: string;
 };
 
-export const Form = ({
+const Form = ({
   onSubmit,
   register,
   errors,
@@ -43,3 +38,5 @@ export const Form = ({
     </form>
   );
 };
+
+export default Form;
