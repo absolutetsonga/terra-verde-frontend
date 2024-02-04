@@ -1,16 +1,10 @@
 import { PayloadAction, createSlice } from "@reduxjs/toolkit";
 import { trees } from "../../data";
 import { Marker } from "@googlemaps/markerclusterer";
-
-type Tree = {
-  key: string;
-  name: string;
-  lat: number;
-  lng: number;
-};
+import { ITree } from "../../models";
 
 interface TreesState {
-  trees: Tree[];
+  trees: ITree[];
   selectedTreeKey: string | null;
   treeMarkers: { [key: string]: Marker };
 }

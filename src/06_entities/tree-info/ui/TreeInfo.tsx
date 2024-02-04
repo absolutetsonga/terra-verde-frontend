@@ -1,13 +1,18 @@
-import { useForm } from "react-hook-form";
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 
 import { Form } from "@/src/04_widgets/form/Form";
 
 import { toast } from "react-toastify";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { createTreePointSchema } from "../lib/schemas";
+import { createTreePointSchema } from "../../../07_shared/lib/schemas";
 import { CREATE_TREE_POINT_FIELD_INFO } from "@/src/07_shared/lib/constants";
+import { ITree } from "@/src/07_shared/lib/models";
 
-const TreeInfo = ({ point }: any) => {
+interface TreeInfoProps {
+  point: ITree; // Use the appropriate type here
+}
+
+const TreeInfo = ({ point }: TreeInfoProps) => {
   const {
     register,
     handleSubmit,
@@ -16,21 +21,32 @@ const TreeInfo = ({ point }: any) => {
     resolver: zodResolver(createTreePointSchema),
   });
 
-  const onSubmit = () => {
-    toast.success("Поздравляю! Вы посадили дерево!");
+  const onSubmit = (data: FieldValues) => {
+    console.log(data);
+    toast.success("Congratulations! You've planted a tree!");
   };
 
-  const onInvalid = () => console.error(errors);
+  const onInvalid = (error: unknown) => {
+    console.log(error);
+    toast.error("Please check the form for errors.");
+  };
 
   return (
     <div className="info-window">
       <h3 className="info-title">Tree Info</h3>
+      <h6 className="info-description">{point.name}</h6>
+      <p className="info-description">
+        Brief description of the tree or any interesting details that visitors
+        might want to know.
+      </p>
+
+      {/* Import and use the Form component */}
       <Form
         onSubmit={handleSubmit(onSubmit, onInvalid)}
         register={register}
         errors={errors}
         formFields={CREATE_TREE_POINT_FIELD_INFO}
-        buttonText={"Create"}
+        buttonText="Create Tree Point"
       />
     </div>
   );

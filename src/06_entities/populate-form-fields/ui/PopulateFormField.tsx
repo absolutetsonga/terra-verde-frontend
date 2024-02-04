@@ -1,4 +1,9 @@
-import { UseFormRegister, FieldErrors } from "react-hook-form";
+import {
+  UseFormRegister,
+  FieldErrors,
+  UseFormWatch,
+  FieldValues,
+} from "react-hook-form";
 
 import { FormField } from "@/src/07_shared/ui";
 import { FormFieldInfoType } from "../lib/types";
@@ -23,9 +28,9 @@ const PopulateFormFields = ({
             name={ff.name}
             type={ff.type}
             text={ff.text}
-            register={register}
             errorMessage={errors?.[ff.name]?.message}
             link={ff.link}
+            register={register}
           />
         );
       })}

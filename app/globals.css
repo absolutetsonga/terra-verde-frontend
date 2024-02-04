@@ -8,91 +8,106 @@
 }
 
 .info-window {
-  background-color: white;
-  padding: 16px;
-  border-radius: 8px;
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1),
+    0 10px 10px -5px rgba(0, 0, 0, 0.04);
   width: 100%;
+  max-width: 500px; /* Adjust the width as necessary */
   box-sizing: border-box;
 }
 
+/* Styles for the title of the form */
 .info-title {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
-  font-weight: 600;
+  font-size: 1.25rem;
+  font-weight: 700;
   text-align: center;
+  color: #111827; /* Dark gray */
+  margin-bottom: 16px;
 }
 
-.info-content {
-  font-family: "Arial", sans-serif;
-  margin-top: 12px;
-  margin-bottom: 8px;
-  font-size: 18px;
-  font-weight: bold;
-}
-
-.info-description,
-.info-detail {
-  margin-top: 0;
-  margin-bottom: 8px;
-  font-size: 14px;
-  color: #555;
-}
-
-.info-hr {
-  border: none;
-  height: 1px;
-  background-color: #ddd;
-  margin: 8px 0;
-}
-
-.info-link {
-  color: #007bff;
-}
-
-.info-button,
-.info-label {
-  display: inline-flex;
-  align-items: center;
-  padding: 8px 16px;
-  border-color: transparent;
+/* Styles for the description text */
+.info-description {
   font-size: 1rem;
-  line-height: 1.5rem;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: 500;
-  color: white;
-  background-color: #10b981;
-  cursor: pointer;
-  margin-top: 12px;
+  color: #6b7280; /* Gray */
+  margin-bottom: 16px;
+  text-align: left;
 }
 
-.info-label {
-  display: block;
+/* Styles for the form fields */
+.form-input,
+.form-textarea {
   width: 100%;
-  font-size: 0.875rem;
-  color: #374151;
-  background-color: #f9fafb;
+  padding: 10px 15px;
+  margin-bottom: 10px;
+  border: 2px solid #e5e7eb; /* Light gray border */
   border-radius: 8px;
-  border: 1px solid #d1d5db;
-  padding: 8px;
+  font-size: 1rem;
+  color: #111827; /* Dark gray */
+}
+
+.form-textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+/* Styles for the label */
+.form-label {
+  border: 1px solid #ccc;
+  display: inline-block;
+  padding: 6px 12px;
   cursor: pointer;
 }
 
-.info-label {
-  margin-bottom: 8px;
-}
-
-.info-help-text {
-  margin-top: 4px;
+/* Styles for the form link */
+.form-link {
   font-size: 0.875rem;
-  line-height: 1.25rem;
-  color: #6b7280;
+  font-weight: 600;
+  color: #4f46e5; /* Indigo */
+  text-decoration: none;
+  margin-left: 8px;
 }
 
-.info-input {
-  width: 0;
-  height: 0;
+.form-link:hover {
+  text-decoration: underline;
+}
+
+/* Styles for the form button */
+.form-button {
+  width: 100%;
+  padding: 12px 20px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #ffffff; /* White text */
+  background-color: #10b981; /* Green background */
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-button:hover {
+  background-color: #059669; /* Darker green */
+}
+
+.form-image-preview {
+  max-width: 100%;
+  max-height: 300px; /* Adjust the height as necessary */
+  margin-bottom: 16px;
+  border-radius: 8px;
+}
+
+/* Styles for error messages */
+.error-message {
+  font-size: 0.875rem;
+  color: #ef4444; /* Red */
+  margin-top: 4px;
+}
+
+input[type="file"] {
+  display: none;
 }

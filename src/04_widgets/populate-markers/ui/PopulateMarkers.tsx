@@ -12,7 +12,7 @@ import { TreeInfo } from "../../../06_entities/tree-info/ui";
 
 import type { Marker } from "@googlemaps/markerclusterer";
 
-type Point = google.maps.LatLngLiteral & { key: string };
+type Point = google.maps.LatLngLiteral & { key: string; name: string };
 type Props = { points: Point[] };
 
 const PopulateMarkers = ({ points }: Props) => {
