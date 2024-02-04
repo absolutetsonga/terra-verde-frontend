@@ -15,7 +15,7 @@ export const MapPage = () => {
         style={{
           height: "100vh",
         }}
-        className="col-span-7"
+        className="cols-span-2 sm:col-span-3 md:col-span-5 lg:col-span-7"
       >
         <Map
           center={position}
