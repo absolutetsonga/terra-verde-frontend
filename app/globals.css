@@ -21,6 +21,11 @@
   box-sizing: border-box;
 }
 
+.info-container {
+  display: flex;
+  flex-direction: column;
+}
+
 /* Styles for the title of the form */
 .info-title {
   font-size: 1.25rem;
@@ -61,6 +66,7 @@
   display: inline-block;
   padding: 6px 12px;
   cursor: pointer;
+  width: 100%;
 }
 
 /* Styles for the form link */
@@ -99,6 +105,7 @@
   max-height: 300px; /* Adjust the height as necessary */
   margin-bottom: 16px;
   border-radius: 8px;
+  object-fit: contain;
 }
 
 /* Styles for error messages */
