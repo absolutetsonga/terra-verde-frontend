@@ -1,11 +1,14 @@
-import { setSelectedTreeKey } from "@/src/07_shared/features/trees/treesSlice";
+import { setSelectedTreeKey } from "@/src/07_shared/lib/features/trees/treesSlice";
 
-import { useAppDispatch, useAppSelector } from "@/src/07_shared/store/store";
+import {
+  useAppDispatch,
+  useAppSelector,
+} from "@/src/07_shared/lib/store/store";
 import { useState } from "react";
 import { useRenderCustomClusterIcon } from "../lib/hooks/useRenderCustomClusterIcon";
 
 import { AdvancedMarker, InfoWindow } from "@vis.gl/react-google-maps";
-import { TreeInfo } from "../../tree-info/ui";
+import { TreeInfo } from "../../../06_entities/tree-info/ui";
 
 import type { Marker } from "@googlemaps/markerclusterer";
 
@@ -57,7 +60,7 @@ const PopulateMarkers = ({ points }: Props) => {
           position={point}
           onCloseClick={() => dispatch(setSelectedTreeKey(null))}
         >
-          <TreeInfo point={point}/>
+          <TreeInfo point={point} />
         </InfoWindow>
       )}
     </div>

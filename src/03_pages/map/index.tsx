@@ -1,9 +1,9 @@
 "use client";
 
-import { useAppSelector } from "@/src/07_shared/store/store";
+import { useAppSelector } from "@/src/07_shared/lib/store/store";
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
 
-import { PopulateMarkers } from "@/src/06_entities/populate-markers/ui";
+import { PopulateMarkers } from "@/src/04_widgets/populate-markers/ui";
 
 export const MapPage = () => {
   const trees = useAppSelector((state) => state.trees.trees);
