@@ -54,6 +54,11 @@ const Sidebar = () => {
             }}
             className="absolute top-[50%] left-2 transform -translate-y-[50%] min-h-max flex flex-col justify-center flex-auto flex-shrink-0 antialiased bg-[#013220] text-gray-50 rounded-2xl max-w-[240px] z-50 shadow-xl"
           >
+            <FiX
+              onClick={() => cycleOpen()}
+              size={24}
+              className="flex self-end mr-2 mt-2"
+            />
             <motion.div
               className="flex flex-col h-full"
               initial="open"
@@ -62,7 +67,7 @@ const Sidebar = () => {
               variants={sideVariants}
             >
               <div className="relative flex flex-col overflow-y-auto overflow-x-hidden">
-                <ul className="flex flex-col py-4 space-y-1">
+                <ul className="flex flex-col pb-3 space-y-1">
                   {sidebarItems.map((item, index) => (
                     <React.Fragment key={index}>
                       {item.section && <SidebarSection title={item.section} />}
@@ -77,12 +82,6 @@ const Sidebar = () => {
                   ))}
                 </ul>
               </div>
-
-              <FiX
-                onClick={() => cycleOpen()}
-                size={24}
-                className="absolute right-2 top-2"
-              />
             </motion.div>
           </motion.aside>
         )}

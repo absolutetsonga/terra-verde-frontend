@@ -26,7 +26,7 @@ export const sidebarItems = [
   },
   {
     href: "/dashboard",
-    text: "Notifications",
+    text: "Dashboard",
     icon: <FiBell />,
   },
   {
