@@ -53,7 +53,7 @@ const Sidebar = () => {
               opacity: 0,
               transition: { delay: 0.7, duration: 0.3 },
             }}
-            className="absolute top-[50%] left-2 transform -translate-y-[50%] min-h-max flex flex-col justify-center flex-auto flex-shrink-0 antialiased bg-[#013220] text-gray-50 rounded-2xl max-w-[240px] z-50 shadow-xl"
+            className="absolute top-[50%] left-2 transform -translate-y-[50%] min-h-max flex flex-col justify-center flex-auto flex-shrink-0 antialiased bg-primary text-gray-50 rounded-2xl max-w-[240px] z-50 shadow-xl"
           >
             <FiX
               onClick={() => cycleOpen()}
