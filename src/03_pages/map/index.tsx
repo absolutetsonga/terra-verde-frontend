@@ -14,7 +14,7 @@ export const MapPage = () => {
       <div
         style={{
           height: "100%",
-          width: "100%"
+          width: "100%",
         }}
       >
         <Map

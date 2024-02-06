@@ -1,11 +1,6 @@
-import {
-  FiHome,
-  FiSettings,
-  FiLogOut,
-  FiUser,
-  FiMap,
-  FiBell,
-} from "react-icons/fi";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
+import { FiHome, FiMap, FiUser } from "react-icons/fi";
+
 import { PiTreeThin } from "react-icons/pi";
 
 export const sidebarItems = [
@@ -25,24 +20,21 @@ export const sidebarItems = [
     icon: <PiTreeThin />,
   },
   {
-    href: "/dashboard",
-    text: "Dashboard",
-    icon: <FiBell />,
-  },
-  {
-    href: "/profile",
-    text: "Profile",
-    icon: <FiUser />,
-    section: "Settings",
-  },
-  {
-    href: "/settings",
-    text: "Settings",
-    icon: <FiSettings />,
-  },
-  {
-    href: "/logout",
-    text: "Logout",
-    icon: <FiLogOut />,
+    icon: (
+      <div>
+        <SignedIn>
+          <div className="flex flex-row items-center justify-center gap-3">
+            <UserButton />
+            <p className="text-md tracking-wide truncate">Profile</p>
+          </div>
+        </SignedIn>
+        <SignedOut>
+          <div className="flex flex-row items-center gap-3">
+            <FiUser />
+            <SignInButton />
+          </div>
+        </SignedOut>
+      </div>
+    ),
   },
 ];

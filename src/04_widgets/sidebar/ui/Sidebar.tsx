@@ -6,6 +6,7 @@ import { usePathname } from "next/navigation";
 import { sidebarItems } from "../lib/constants";
 import { SidebarItem } from "@/src/07_shared/ui";
 import { SidebarSection } from "@/src/07_shared/ui";
+import { SignInButton, SignedIn, SignedOut, UserButton } from "@clerk/nextjs";
 
 import { FiChevronRight, FiX } from "react-icons/fi";
 
@@ -67,15 +68,14 @@ const Sidebar = () => {
               variants={sideVariants}
             >
               <div className="relative flex flex-col overflow-y-auto overflow-x-hidden">
-                <ul className="flex flex-col pb-3 space-y-1">
+                <ul className="flex flex-col pb-3 space-y-1 gap-0.5">
                   {sidebarItems.map((item, index) => (
                     <React.Fragment key={index}>
-                      {item.section && <SidebarSection title={item.section} />}
                       <SidebarItem
                         href={item.href}
                         text={item.text}
                         icon={item.icon}
-                        isSelected={isSelected(item.href)}
+                        isSelected={isSelected(item.href ?? "")}
                         itemVariants={itemVariants}
                       />
                     </React.Fragment>
